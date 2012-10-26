@@ -4,6 +4,7 @@ gem "rack"
 gem "rack-cache"
 gem "rake"
 gem "mime-types"
+gem "unicorn"
 
 group :development, :test do
   gem "heroku"
