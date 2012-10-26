@@ -1,6 +1,7 @@
 source :rubygems
 
 gem "rack"
+gem "rack-cache"
 gem "rake"
 gem "mime-types"
 
