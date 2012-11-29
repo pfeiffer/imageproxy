@@ -30,7 +30,7 @@ module Imageproxy
           end
 
           file.open
-          [200, {"Cache-Control" => "max-age=#{cachetime}", "Expires" => (Time.now + cachetime).utc.rfc2822}.merge(content_type(file, options)), file]
+          [200, {"Cache-Control" => "max-age=#{cachetime}, public", "Expires" => (Time.now + cachetime).utc.rfc2822}.merge(content_type(file, options)), file]
         when "identify"
           check_signature request, options
           check_domain options
