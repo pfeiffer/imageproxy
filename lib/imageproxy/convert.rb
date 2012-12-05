@@ -86,7 +86,10 @@ module Imageproxy
     end
 
     def file
-      @tempfile ||= Tempfile.new("imageproxy").tap(&:close)
+      @tempfile ||= Tempfile.new("imageproxy").tap do |f|
+        f.chmod(0777)
+        f.close
+      end
     end
   end
 end
