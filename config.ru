@@ -1,4 +1,6 @@
 require 'bundler'
+Bundler.setup
+
 require 'rack/sendfile'
 require 'rack/cache'
 
