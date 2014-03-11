@@ -2,6 +2,9 @@
 .rvmrc
 .bundle
 
+cookbooks/
+tmp/
+
 # rcov generated
 coverage
 
