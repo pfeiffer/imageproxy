@@ -21,9 +21,11 @@ module Imageproxy
     end
 
     def check_parameters
+      check_param('crop', /.*/)
       check_param('resize', /^[0-9]{1,5}(x[0-9]{1,5})?$/)
       check_param('thumbnail', /^[0-9]{1,5}(x[0-9]{1,5})?$/)
       check_param('rotate', /^(-)?[0-9]{1,3}(\.[0-9]+)?$/)
+      check_param('blur', /^[0-9]{1,5}(x[0-9]{1,5})?$/)
       check_param('format', /^[0-9a-zA-Z]{2,6}$/)
       check_param('progressive', /^true|false$/i)
       check_param('background', /^#[0-9a-f]{3}([0-9a-f]{3})?|rgba\([0-9]{1,3},[0-9]{1,3},[0-9]{1,3},[0-1](.[0-9]+)?\)$/)

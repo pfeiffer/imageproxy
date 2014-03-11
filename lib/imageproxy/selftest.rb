@@ -37,6 +37,12 @@ module Imageproxy
 
         ["Resize with cutting", "/convert?resize=100x100&shape=cut&source=#{source}"],
 
+        ["Blurring", "/convert?blur=10x10&source=#{source}"],
+
+        ["Modulating", "/convert?modulate=80&source=#{source}"],
+
+        ["Cropping", "/convert?crop=10x10+10+10&source=#{source}"],
+
         ["Flipping horizontally", "/convert?flip=horizontal&source=#{source}"],
         ["Flipping vertically", "/convert?flip=vertical&source=#{source}"],
 

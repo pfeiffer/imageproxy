@@ -7,8 +7,8 @@ module Imageproxy
 
     def initialize(options)
       @options = options
-      if (!(options.resize || options.thumbnail || options.rotate || options.flip || options.format ||
-        options.quality || options.overlay))
+      if (!(options.crop || options.resize || options.thumbnail || options.rotate || options.flip || options.format ||
+        options.quality || options.overlay || options.blur || options.modulate))
         raise "Missing action or illegal parameter value"
       end
     end
@@ -36,6 +36,7 @@ module Imageproxy
 
     def convert_options
       convert_options = []
+      convert_options << "-crop '#{options.crop}'" if options.crop
       convert_options << "-resize #{resize_thumbnail_options(options.resize)}" if options.resize
       convert_options << "-thumbnail #{resize_thumbnail_options(options.thumbnail)}" if options.thumbnail
       convert_options << "-flop" if options.flip == "horizontal"
@@ -43,6 +44,8 @@ module Imageproxy
       convert_options << rotate_options if options.rotate
       convert_options << "-colors 256" if options.format == "png8"
       convert_options << "-quality #{options.quality}" if options.quality
+      convert_options << "-blur #{options.blur}" if options.blur
+      convert_options << "-modulate #{options.modulate}" if options.modulate
       convert_options << interlace_options if options.progressive
       convert_options.join " "
     end
