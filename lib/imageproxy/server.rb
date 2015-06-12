@@ -16,7 +16,7 @@ module Imageproxy
       request = Rack::Request.new(env)
       options = Options.new(request.path_info, request.params)
       user_agent = request.env["HTTP_USER_AGENT"]
-      cachetime = config(:cache_time) ? config(:cache_time) : 60*60*24*5
+      cachetime = config(:cache_time) ? config(:cache_time).to_i : 60*60*24*5
 
       case options.command
         when "convert", "process", nil
