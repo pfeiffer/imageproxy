@@ -12,7 +12,7 @@ GEM
       bundler (~> 1.0)
       git (>= 1.2.5)
       rake
-    kgio (2.7.4)
+    kgio (2.9.3)
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
@@ -52,7 +52,6 @@ DEPENDENCIES
   rack
   rack-cache
   rack-test
-  rake
   rspec
   shotgun
   unicorn

@@ -2,9 +2,11 @@ source 'https://rubygems.org'
 
 gem "rack"
 gem "rack-cache"
-gem "rake"
 gem "mime-types"
-gem "unicorn"
+
+group :production do
+  gem "unicorn"
+end
 
 group :development, :test do
   gem "heroku"
